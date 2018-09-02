@@ -1,0 +1,8 @@
+version: '3'
+services:
+  eureka-server:
+    image: xlfd/xlfd-eureka
+    restart: always
+    ports:
+      - 8761:8761
+

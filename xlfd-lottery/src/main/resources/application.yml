@@ -1,0 +1,15 @@
+server:
+  port: 8092
+spring:
+  application:
+    name: lottery-server
+
+  zipkin:
+      base-url: http://localhost:8096
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eurekazero:8100/eureka,http://eurekafirst:8110/eureka
+  instance:
+    status-page-url: http://localhost:${server.port}/swagger-ui.html #配置swagger-ui方便在注册中心可以跳转到提供者的接口信息文档

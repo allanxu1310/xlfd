@@ -1,0 +1,16 @@
+server:
+  port: 8110
+spring:
+  application:
+    name: eureka-server
+eureka:
+  instance:
+    hostname: eurekafirst   #提供服务的域名，这里在hosts文件中修改了
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: #向eurekazero注册中心注册自己
+        http://eurekazero:8100/eureka/,http://eurekasecond:8120/eureka/
+
+

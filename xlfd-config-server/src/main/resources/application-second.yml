@@ -1,0 +1,21 @@
+server:
+  port: 8131
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/allanxu1310/config-pro.git  #服务的git仓库地址
+          search-paths: /**   #配置文件所在的目录
+      label: master  #配置文件所在的分支
+      username: allanxu1310  #git仓库的用户名
+      password: xiaoqi1310
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8100/eureka/,http://localhost:8110/eureka/
+

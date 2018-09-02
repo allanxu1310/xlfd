@@ -1,0 +1,21 @@
+server:
+  port: 8160
+spring:
+  application:
+    name: userweb-server
+
+  datasource:
+      name: xlfd
+      url: jdbc:mysql://127.0.0.1:3306/xlfd
+      username: root
+      password: 123456
+      # 使用druid数据源
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.jdbc.Driver
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eurekazero:8100/eureka
+  instance:
+    status-page-url: http://localhost:${server.port}/swagger-ui.html #配置swagger-ui方便在注册中心可以跳转到提供者的接口信息文档

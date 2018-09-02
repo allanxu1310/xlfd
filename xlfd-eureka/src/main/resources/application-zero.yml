@@ -1,0 +1,20 @@
+server:
+  port: 8100
+spring:
+  application:
+    name: eureka-server
+eureka:
+  instance:
+    hostname: eurekazero
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone:  #向eurekafirst注册中心注册自己
+        http://eurekafirst:8110/eureka/,http://eurekasecond:8120/eureka/
+
+#security:
+#  user:
+#    name: allan
+#    password: 123456
+

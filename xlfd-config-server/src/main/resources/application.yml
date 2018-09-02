@@ -1,0 +1,30 @@
+server:
+  port: 8130
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/allanxu1310/config-pro.git  #服务的git仓库地址
+          search-paths: /**   #配置文件所在的目录
+      label: master  #配置文件所在的分支
+      username: allanxu1310  #git仓库的用户名
+      password: xiaoqi1310
+  rabbitmq:  #rabbitmq配置
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+management:
+  security:
+    enabled: false  #可以将刷新设置密码取消，因为我们是在测验，所以不需要密码。如果是你们公司内网的话，有物理隔离，应该也不需要密码。
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8100/eureka/,http://localhost:8110/eureka/
+

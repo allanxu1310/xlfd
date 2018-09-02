@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true   #开启配置服务发现
+        service-id: config-server   #配置服务实例名称
+      label: master    #配置文件所在分支
+      name: application
+      profile: dev
+      uri: http://localhost:8130/   #配置服务中心
+
+management:
+  security:
+    enabled: false
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8100/eureka/,http://localhost:8110/eureka/

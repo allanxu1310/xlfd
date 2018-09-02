@@ -1,0 +1,50 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: gateway-server
+
+#zuul:
+#  routes:
+ #   api-a:  # routes to serviceId 这里边是通过serviceid来绑定地址，以/api-a/的请求   则访问user-server对应的服务。
+ #     path: /api-a/**
+ #     serviceId: user-server
+    #api-b:
+    #  path: /api-b/**
+    #  serviceId: lottery-server
+
+
+  # api-a-url:  # routes to url  这里是绑定具体的ip地址
+  #    path: /api-a-url/**
+   #   url: http://localhost:2222/
+
+zuul:
+  ignoredServices: '*'
+  routes:
+    user-server: /user/**
+    auth-server: /auth/**
+  sensitive-headers:
+
+  management:
+    security:
+      enabled: false
+
+  security:
+    oauth2:
+      client:
+        clientId: client
+        clientSecret: client-secret
+      resource:
+        token-info-uri: http://localhost:8150/oauth/check_token
+        prefer-token-info: true
+        jwt:
+          key-uri: http://localhost:8150/oauth/token_key
+    sessions: stateless
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8100/eureka/,http://localhost:8110/eureka/
+  instance:
+    prefer-ip-address: false    #如果不想使用主机名进行访问注册中心，也可以使用ip，但是需要先添加一条配置，该值默认false
+   # status-page-url: http://localhost:${server.port}/swagger-ui.html #配置swagger-ui方便在注册中心可以跳转到提供者的接口信息文档
