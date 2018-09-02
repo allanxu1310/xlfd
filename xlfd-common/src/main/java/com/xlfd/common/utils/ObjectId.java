@@ -12,6 +12,7 @@ import    java.net.NetworkInterface;
   import java.util.logging.Logger;
 
 /**
+ * mongodb objectid  生成分布式唯一id
  * @auther Allan
  * @date 2018/9/2 21:15
  */
