@@ -25,6 +25,7 @@
 		<module>xlfd-apollo-demo</module>
 		<module>xlfd-rabbitmq</module>
 		<module>xlfd-zipkin</module>
+		<module>xlfd-turbine</module>
     </modules>
 
 	<parent>

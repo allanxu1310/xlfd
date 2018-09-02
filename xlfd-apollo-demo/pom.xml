@@ -29,6 +29,12 @@
 		<version>1.0.0</version>
 	</dependency>
 
+		<!--hystrix-dashboard 监控-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>
