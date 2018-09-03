@@ -1,0 +1,17 @@
+spring:
+  application.name: turbine-server
+server:
+  port: 8205
+security.basic.enabled: false
+turbine:
+  aggregator:
+    clusterConfig: default   # ָ���ۺ���Щ��Ⱥ�����ʹ��","�ָĬ��Ϊdefault����ʹ��http://.../turbine.stream?cluster={clusterConfig֮һ}����
+  appConfig: lottery-server,apollo-demo-server  ### ����Eureka�е�serviceId�б����������Щ����
+  clusterNameExpression: new String("default")
+  # 1. clusterNameExpressionָ����Ⱥ���ƣ�Ĭ�ϱ��ʽappName����ʱ��turbine.aggregator.clusterConfig��Ҫ������Ҫ��ص�Ӧ������
+  # 2. ��clusterNameExpression: defaultʱ��turbine.aggregator.clusterConfig���Բ�д����ΪĬ�Ͼ���default
+  # 3. ��clusterNameExpression: metadata['cluster']ʱ��������Ҫ��ص�Ӧ��������eureka.instance.metadata-map.cluster: ABC������Ҫ���ã�ͬʱturbine.aggregator.clusterConfig: ABC
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8100/eureka/
