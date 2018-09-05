@@ -1,8 +1,11 @@
 server:
-  port: 8761
+  port: 8100
+spring:
+  application:
+    name: eureka-server
 eureka:
   instance:
-    prefer-ip-address: true
+    hostname: eurekazero
   client:
     registerWithEureka: false
     fetchRegistry: false

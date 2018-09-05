@@ -11,7 +11,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8100/eureka/,http://localhost:8110/eureka/,http://localhost:8120/eureka/
+      defaultZone: http://localhost:8100/eureka/  #,http://localhost:8110/eureka/,http://localhost:8120/eureka/
   instance:
     prefer-ip-address: false    #如果不想使用主机名进行访问注册中心，也可以使用ip，但是需要先添加一条配置，该值默认false
     status-page-url: http://localhost:${server.port}/swagger-ui.html #配置swagger-ui方便在注册中心可以跳转到提供者的接口信息文档
